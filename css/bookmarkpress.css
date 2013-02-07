@@ -1,0 +1,10 @@
+#bookmarkpress_like_button, #bookmarkpress_visit_link{
+	cursor:pointer;
+	cursor:hand;
+}
+
+.bookpressmanage{
+	float:left;
+	width:45%;
+	position:relative;
+}
