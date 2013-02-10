@@ -19,5 +19,7 @@ require_once( 'class-BookmarkPopular.php');
 require_once( 'class-BookmarkRecent.php');
 require_once( 'class-Bookmarklet.php' );
 require_once( 'class-BookmarkFeed.php' );
+require_once( 'class-BookmarkCSV.php' );
+require_once( 'class-BookmarkAPI.php' );
 
 ?>
