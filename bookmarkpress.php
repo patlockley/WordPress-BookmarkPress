@@ -16,6 +16,7 @@ require_once( 'class-BookmarkDetails.php');
 require_once( 'class-BookmarkPostsFilter.php');
 require_once( 'class-BookmarkLibrary.php');
 require_once( 'class-BookmarkPopular.php');
+require_once( 'class-BookmarkSetup.php');
 require_once( 'class-BookmarkRecent.php');
 require_once( 'class-Bookmarklet.php' );
 require_once( 'class-BookmarkFeed.php' );
