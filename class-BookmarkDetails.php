@@ -5,7 +5,7 @@ class BookmarkDetails{
 	function bookmarkpress_post_details($post_id){
 	
 		$pop = get_post_meta( $post_id, '_bookmark_likes', true);
-						
+			
 		$visits = get_post_meta( $post_id, '_bookmark_visits', true);
 					
 		$views = get_post_meta( $post_id, '_bookmark_views', true);
@@ -14,11 +14,11 @@ class BookmarkDetails{
 	
 		if(trim($pop)==""){
 		
-			$data = "Likes 0 | ";
+			$data .= "Likes 0 | ";
 		
 		}else{
 		
-			$data = "Likes " . $pop . " | ";
+			$data .= "Likes " . $pop . " | ";
 		
 		}
 		
@@ -34,7 +34,7 @@ class BookmarkDetails{
 		
 		if(trim($views)==""){
 		
-			$data = " Views 0 ";
+			$data .= " Views 0 ";
 		
 		}else{
 		
@@ -42,7 +42,7 @@ class BookmarkDetails{
 		
 		}
 
-		$data .= apply_filters("bookmarkpress_add_post_details", $post_id);
+		$data .= str_replace($post_id,"",apply_filters("bookmarkpress_add_post_details", $post_id));
 		
 		return $data;
 	

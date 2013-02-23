@@ -115,7 +115,7 @@ class Bookmarkpress {
 			return $content;
 
 		$plays = get_post_meta( $post->ID, '_bookmark_views', true );
-		update_post_meta( $post->ID, '_bookmark_views', $plays+1);
+		update_post_meta( $post->ID, '_bookmark_views', ($plays+1));
 
 		$iframe = "<iframe style='width:100%; height:600px;' src='" . esc_attr( $bookmark_url ) . "'></iframe>";
 

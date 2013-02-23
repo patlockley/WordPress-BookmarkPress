@@ -36,12 +36,14 @@ class BookmarkLibrary {
 				
 			}
 		
+			$term = htmlentities($_REQUEST['term']);
+		
 			$results = $wpdb->query( 
 				$wpdb->prepare( 
 					"select id, post_title, post_date, guid, post_author FROM " . $table_name . "
 					where post_type = 'bookmarkpress' 
 					and post_title like '%s' " . $extra,
-					"%". $_REQUEST['term'] . "%"
+					"%". $term. "%"
 					)
 			);
 		
@@ -54,6 +56,9 @@ class BookmarkLibrary {
 					Likes : Most popular - <a onClick="bookmarkpress_library_search('pop_desc')">First</a> / <a onClick="bookmarkpress_library_search('pop_asc')">Last</a> |
 					Visits : Most Visited - <a onClick="bookmarkpress_library_search('visits_desc')">First</a> / <a onClick="bookmarkpress_library_search('visits_asc')">Last</a> |
 					Views : Most Viewed - <a onClick="bookmarkpress_library_search('views_desc')">First</a> / <a onClick="bookmarkpress_library_search('views_asc')">Last</a>
+				</p>
+				<p>
+					<a href="<?PHP echo home_url() . "?feed=search_feed&terms=" . $term; ?>">RSS Feed</a> for "<?PHP echo $term; ?>".
 				</p><?PHP
 			
 				$output = array();

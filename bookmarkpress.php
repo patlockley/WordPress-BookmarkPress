@@ -1,13 +1,14 @@
 <?php
 
-/*
-Plugin Name: OER Bookmarks
-Plugin URI: http://simonwheatley.co.uk/wordpress/oerb
-Description: OER bookmarks and bookmarklet for bookmarking
-Version: 1.06
-Author: Simon Wheatley
-Author URI: http://simonwheatley.co.uk/wordpress/
-*/
+	/*
+	Plugin Name: BookMarkPress
+	Description: OER bookmarks and bookmarklet for bookmarking
+	Version: 0.1
+	Author: pgogy
+	Plugin URI: http://www.pgogy.com/code/groups/wordpress/bookmarkpress/
+	Author URI: http://www.pgogy.com
+	License: GPL
+	*/
 
 require_once( 'class-Bookmarks.php' );
 require_once( 'class-BookmarkEdit.php');
@@ -22,5 +23,6 @@ require_once( 'class-Bookmarklet.php' );
 require_once( 'class-BookmarkFeed.php' );
 require_once( 'class-BookmarkCSV.php' );
 require_once( 'class-BookmarkAPI.php' );
+require_once( 'class-BookmarkActivityStream.php' );
 
 ?>

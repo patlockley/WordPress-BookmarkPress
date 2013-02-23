@@ -1,35 +1,45 @@
 === Plugin Name ===
 Contributors: pgogy
-Tags: interaction, bookmark, bookmarklet, favorite, favourite
-Requires at least: 3.0.0
+Tags: bookmark, favourite, favourites, press this, bookmarklet
+Requires at least: 3.1
 Tested up to: 3.5
 Stable tag: 0.1
 
-Allows a site admin to create a bookmarking tool for their site
+BookMarkPress allows users to bookmark resources on the internet and create a searchable library of them
 
 == Description ==
 
-Allows a site admin to create a bookmarking tool for their site
+BookMarkPress allows users to bookmark resources on the internet and create a searchable library of them.
+
+More extendable than press this, BookMarkPress creates a searchable resource library, scope for liking bookmarks and recording the most popular.
+
+Please come to http://www.pgogy.com and http://www.pgogy.com/code/groups/wordpress/bookmarkpress/ for support
+
+[vimeo https://vimeo.com/60034453]
+[vimeo https://vimeo.com/60034454]
+[vimeo https://vimeo.com/60034452]
+[vimeo https://vimeo.com/60033359]
+[vimeo https://vimeo.com/60033357]
+[vimeo https://vimeo.com/60033355]
+[vimeo https://vimeo.com/60033353]
 
 == Installation ==
 
-This section describes how to install the plugin and get it working.
-
-e.g.
-
-1. Upload the contents of the zip (including the folder) to the `/wp-content/plugins/` directory
+1. Upload `plugin-name.php` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Visit the settings page for the plugin - No other configuration is required.
-
-== Changelog ==
-
-* This is the first version we have distributed - no changes have been made post this initial release as of yet.
-
-== Screenshots ==
-
 
 == Frequently Asked Questions ==
 
-We are a new plugin - so no questions so far.
+No Questions have been asked yet. Please see http://www.pgogy.com/code/groups/wordpress/bookmarkpress/
 
-== Upgrade Notice ==
+== Screenshots ==
+
+1. BookMarkPress Setup page
+2. Bookmark list
+3. Editing a bookmark
+4. The Bookmark library
+
+== Changelog ==
+
+= 0.1 =
+First version released. Still a development version. I expect it to work, but problems may occur. 
