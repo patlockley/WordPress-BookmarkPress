@@ -77,33 +77,53 @@ class Bookmarklet_creation {
 	protected function get_bookmarklet_link() {
 		$link = "javascript:
 				var n = document;";
-				
-		$link = apply_filters("bookmarkpress_properties_javascript", $link);		
-			
+
+	
 	$link .= "var rootNode = n;
 			
+	if (n.v) {
+		n.v = false;
+		if (n.nextSibling) {
+			n = n.nextSibling;
+		} else {
+			n = n.parentNode;
+		}
+	} else {
+		if (n.firstChild) {
+			n.v = true;
+			n = n.firstChild;
+		}else if (n.nextSibling) {
+			n = n.nextSibling;
+		}else {
+			n = n.parentNode;
+		}
+	}					
 	while (n) {
 	
-		if(n.hasAttributes()){
+		if(n.hasAttributes!=undefined){
+	
+			if(n.hasAttributes()){
+					
+				";
 				
-			";
+			$link = apply_filters("bookmarkpress_attributes_javascript", $link);			
 
-		$link = apply_filters("bookmarkpress_attributes_javascript", $link);			
+			$link .= "
+					
+			}
 			
-		$link .= "
-				
 		}
 		
 		if(n.innerHTML!=''){
 				
 			";
-			
+
 		$link = apply_filters("bookmarkpress_innerhtml_javascript", $link);
-			
-			
+
+
 		$link .= "
 				
-		}
+		}	
 
 		if (n.v) {
 			n.v = false;
@@ -132,9 +152,9 @@ class Bookmarklet_creation {
 				w=window,
 				e=encodeURIComponent,
 				u=f+'?action=bookmarkpress&url='+e(l.href)+'&title='+e(n.title)";
-					
-			$link =	apply_filters("bookmarkpress_linkvariables_javascript", $link);
-	
+				
+	$link =	apply_filters("bookmarkpress_linkvariables_javascript", $link);			
+						
 	$link .=";
 				a=function(){if(!w.open(u,'t','toolbar=0,resizable=1,scrollbars=1,status=1,width=720,height=570'))l.href=u;};
 				if (/Firefox/.test(navigator.userAgent)) setTimeout(a, 0); else a();

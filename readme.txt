@@ -3,7 +3,7 @@ Contributors: pgogy
 Tags: bookmark, favourite, favourites, press this, bookmarklet
 Requires at least: 3.1
 Tested up to: 3.5
-Stable tag: 0.1
+Stable tag: 0.2
 
 BookMarkPress allows users to bookmark resources on the internet and create a searchable library of them
 
@@ -40,6 +40,9 @@ No Questions have been asked yet. Please see http://www.pgogy.com/code/groups/wo
 4. The Bookmark library
 
 == Changelog ==
+
+=0.2=
+Fixed JS bug and filter bug
 
 = 0.1 =
 First version released. Still a development version. I expect it to work, but problems may occur. 
