@@ -52,7 +52,7 @@ class Bookmarklet_creation {
 		
 		$quick[ 'post_type' ] = "bookmarkpress";
 		$quick[ 'tax_input' ] = isset($_POST[ 'tax_input' ]) ? $_POST[ 'tax_input' ] : null;
-		$quick[ 'post_title' ] = ( trim($_POST[ 'title' ]) != '' ) ? $_POST[ 'title' ] : '  ';
+		$quick[ 'post_title' ] = ( trim($_POST[ 'title' ]) != '' ) ? stripslashes($_POST[ 'title' ]) : '  ';
 		$quick[ 'post_content' ] = isset($_POST[ 'content' ]) ? $_POST[ 'content' ] : '';
 
 		$post_id = wp_insert_post($quick, true);

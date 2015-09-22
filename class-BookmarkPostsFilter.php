@@ -12,14 +12,17 @@ class BookmarkPostsFilter {
 	function posts_where( $where ) {
 			
 		global $wpdb;	
+
+		if(is_home()){
 		
-		//$some_posts = get_posts( array( 'suppress_filters' => false ) );
+			$some_posts = get_posts( array( 'suppress_filters' => false ) );
 		
-		if(get_option("bookmark_press_include")){
+			if(get_option("bookmark_press_include")){
 			
-			$where = str_replace("{$wpdb->posts}.post_type = 'post'", "({$wpdb->posts}.post_type = 'post' or {$wpdb->posts}.post_type = 'bookmarkpress')", $where);
-			//$where = " BULL SHIT";
+				$where = str_replace("{$wpdb->posts}.post_type = 'post'", "({$wpdb->posts}.post_type = 'post' or {$wpdb->posts}.post_type = 'bookmarkpress')", $where);
 		
+			}
+
 		}
 		
 		return $where;
@@ -27,19 +30,23 @@ class BookmarkPostsFilter {
 	}
 
     function add_to_query( $query ) {
+
+		if(is_home()){
 	
-		if(get_option("bookmark_press_include")){
+			if(get_option("bookmark_press_include")){
 	
-			$supported = $query->get( 'post_type' );
-			if ( !$supported || $supported == 'post' )
-				$supported = array( 'post', 'bookmarkpress' );
-			elseif ( is_array( $supported ) )
-				array_push( $supported, 'bookmarkpress' );
-			$query->set( 'post_type', $supported );
-			return $query;
+				$supported = $query->get( 'post_type' );
+				if ( !$supported || $supported == 'post' )
+					$supported = array( 'post', 'bookmarkpress' );
+				elseif ( is_array( $supported ) )
+					array_push( $supported, 'bookmarkpress' );
+				$query->set( 'post_type', $supported );
+				return $query;
+			
+			}
 			
 		}
-			
+
 		return $query;
 		
     }
