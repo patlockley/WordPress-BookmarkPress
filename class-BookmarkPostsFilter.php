@@ -15,8 +15,6 @@ class BookmarkPostsFilter {
 
 		if(is_home()){
 		
-			$some_posts = get_posts( array( 'suppress_filters' => false ) );
-		
 			if(get_option("bookmark_press_include")){
 			
 				$where = str_replace("{$wpdb->posts}.post_type = 'post'", "({$wpdb->posts}.post_type = 'post' or {$wpdb->posts}.post_type = 'bookmarkpress')", $where);
@@ -44,7 +42,7 @@ class BookmarkPostsFilter {
 				return $query;
 			
 			}
-			
+	
 		}
 
 		return $query;
