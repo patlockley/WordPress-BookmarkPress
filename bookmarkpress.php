@@ -3,7 +3,7 @@
 	/*
 	Plugin Name: BookMarkPress
 	Description: OER bookmarks and bookmarklet for bookmarking
-	Version: 0.2
+	Version: 0.3
 	Author: pgogy
 	Plugin URI: http://www.pgogy.com/code/groups/wordpress/bookmarkpress/
 	Author URI: http://www.pgogy.com

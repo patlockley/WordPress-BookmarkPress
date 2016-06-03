@@ -39,17 +39,16 @@ class BookmarkFeed {
 					<?php do_action('rss2_head'); ?>
 					<?PHP
 					
-						$results = $wpdb->query("select id, post_title, post_date, guid, post_author FROM " . $table_name . " where post_type = 'bookmarkpress'");
+						$results = $wpdb->query("select id, post_title, post_date, guid, post_author FROM " . $table_name . " where post_type = 'bookmarkpress' order by id DESC");
 		
 						foreach($wpdb->last_result as $post){
 	
-							print_r($post);
 							?><item>
-								<title><?php the_title_rss() ?></title>
-								<link><?php the_permalink_rss() ?></link>
-								<pubDate><?php echo mysql2date('D, d M Y H:i:s +0000', get_post_time('Y-m-d H:i:s', true), false); ?></pubDate>
+								<title><?php echo $post->post_title; ?></title>
+								<link><?php echo $post->guid; ?></link>
+								<pubDate><?php echo mysql2date('D, d M Y H:i:s +0000', get_post_time('Y-m-d H:i:s', true, $post->id), false); ?></pubDate>
 								<?php the_category_rss('rss2') ?>
-								<?php rss_enclosure(); ?>
+								<enclosure url="http://ofthecommonlaw.com/links-library/files/2015/09/justice2.png" length="1" type="image/jpg" />
 								<?php do_action('rss2_item'); ?>
 							</item><?PHP
 		
